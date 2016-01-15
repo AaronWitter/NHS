@@ -1,0 +1,304 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+                   http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet author="Aaron.Witter (generated)" id="1452878513190-1">
+        <createTable catalogName="test" schemaName="test" tableName="alias_dob">
+            <column autoIncrement="true" name="Alias_DOB_UID" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="Person_UID" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Date_of_Birth" type="date">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Aaron.Witter (generated)" id="1452878513190-2">
+        <createTable catalogName="test" schemaName="test" tableName="duplicate_person">
+            <column name="Person_UID" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Related_UID" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Relationship" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Aaron.Witter (generated)" id="1452878513190-3">
+        <createTable catalogName="test" schemaName="test" tableName="event">
+            <column autoIncrement="true" name="Event_UID" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="Person_UID" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Event_Date" type="date">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Event_Type" type="CHAR(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="End_Date" type="date"/>
+            <column name="Force_Code" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Force_Reference" type="VARCHAR(100)"/>
+            <column name="Offence" type="VARCHAR(255)"/>
+            <column name="Power_of_Arrest" type="VARCHAR(255)"/>
+            <column name="Report_Date" type="date">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Aaron.Witter (generated)" id="1452878513190-4">
+        <createTable catalogName="test" schemaName="test" tableName="guid">
+            <column defaultValue="" name="GUID" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Organisation" type="VARCHAR(255)"/>
+            <column name="Point_of_Contact" type="VARCHAR(255)"/>
+            <column name="Contact_Number" type="VARCHAR(255)"/>
+            <column name="Blocked" type="BIT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Aaron.Witter (generated)" id="1452878513190-5">
+        <createTable catalogName="test" schemaName="test" tableName="identifier">
+            <column autoIncrement="true" name="Identifier_UID" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="Person_UID" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Identifier_Type" type="CHAR(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Identifier" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Aaron.Witter (generated)" id="1452878513190-6">
+        <createTable catalogName="test" schemaName="test" tableName="location">
+            <column autoIncrement="true" name="Location_UID" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="Person_UID" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PO_Box" type="VARCHAR(20)"/>
+            <column name="Extended_Address" type="VARCHAR(255)"/>
+            <column name="Street_Address1" type="VARCHAR(255)"/>
+            <column name="Street_Address2" type="VARCHAR(255)"/>
+            <column name="Street_Address3" type="VARCHAR(255)"/>
+            <column name="Locality" type="VARCHAR(100)"/>
+            <column name="Region" type="VARCHAR(100)"/>
+            <column name="Postal_Code" type="VARCHAR(15)"/>
+            <column name="Country_Name" type="VARCHAR(100)"/>
+            <column name="Notes" type="VARCHAR(255)"/>
+            <column name="Address_Date" type="date"/>
+            <column name="Address_Force_Code" type="VARCHAR(20)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Aaron.Witter (generated)" id="1452878513190-7">
+        <createTable catalogName="test" schemaName="test" tableName="name_alias">
+            <column autoIncrement="true" name="Name_UID" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="Person_UID" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Name_Type" type="CHAR(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Place_of_Birth" type="VARCHAR(255)"/>
+            <column name="Date_of_Birth" type="date"/>
+            <column name="Forename1" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Forename2" type="VARCHAR(255)"/>
+            <column name="Forename3" type="VARCHAR(255)"/>
+            <column name="Forename4" type="VARCHAR(255)"/>
+            <column name="Surname" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Forename1_Metaphone" type="VARCHAR(255)"/>
+            <column name="Forename2_Metaphone" type="VARCHAR(255)"/>
+            <column name="Forename3_Metaphone" type="VARCHAR(255)"/>
+            <column name="Forename4_Metaphone" type="VARCHAR(255)"/>
+            <column name="Surname_Metaphone" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Aaron.Witter (generated)" id="1452878513190-8">
+        <createTable catalogName="test" schemaName="test" tableName="nationality">
+            <column name="Nationality_UID" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Nationality" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Aaron.Witter (generated)" id="1452878513190-9">
+        <createTable catalogName="test" schemaName="test" tableName="occupation">
+            <column name="Occupation_UID" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Occupation" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Aaron.Witter (generated)" id="1452878513190-10">
+        <createTable catalogName="test" schemaName="test" tableName="person">
+            <column autoIncrement="true" name="Person_UID" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="PNC_ID" type="VARCHAR(15)"/>
+            <column name="Gender" type="CHAR(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Occupation" type="INT"/>
+            <column name="Marital_Status" type="CHAR(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Information_Marker" type="TEXT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Aaron.Witter (generated)" id="1452878513190-11">
+        <createTable catalogName="test" schemaName="test" tableName="person_nationality">
+            <column name="Person_UID" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Nationality_UID" type="INT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Aaron.Witter (generated)" id="1452878513190-12">
+        <createTable catalogName="test" schemaName="test" tableName="person_status">
+            <column autoIncrement="true" name="ID" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="Person_UID" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Status_UID" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Reason" type="VARCHAR(255)"/>
+            <column name="Related_Event_UID" type="INT"/>
+            <column name="Status_Record_Date" type="date"/>
+            <column name="Status_Expiry_Date" type="date"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Aaron.Witter (generated)" id="1452878513190-13">
+        <createTable catalogName="test" schemaName="test" tableName="statuses">
+            <column autoIncrement="true" name="Status_UID" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="Description" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Aaron.Witter (generated)" id="1452878513190-14">
+        <addPrimaryKey catalogName="test" columnNames="GUID" constraintName="PRIMARY" schemaName="test" tableName="guid"/>
+    </changeSet>
+    <changeSet author="Aaron.Witter (generated)" id="1452878513190-15">
+        <addPrimaryKey catalogName="test" columnNames="Nationality_UID" constraintName="PRIMARY" schemaName="test" tableName="nationality"/>
+    </changeSet>
+    <changeSet author="Aaron.Witter (generated)" id="1452878513190-16">
+        <addPrimaryKey catalogName="test" columnNames="Occupation_UID" constraintName="PRIMARY" schemaName="test" tableName="occupation"/>
+    </changeSet>
+    <changeSet author="Aaron.Witter (generated)" id="1452878513190-17">
+        <createIndex catalogName="test" indexName="Nationality_UID" schemaName="test" tableName="person_nationality">
+            <column name="Nationality_UID"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="Aaron.Witter (generated)" id="1452878513190-18">
+        <createIndex catalogName="test" indexName="Person_UID" schemaName="test" tableName="alias_dob">
+            <column name="Person_UID"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="Aaron.Witter (generated)" id="1452878513190-19">
+        <createIndex catalogName="test" indexName="Person_UID" schemaName="test" tableName="duplicate_person">
+            <column name="Person_UID"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="Aaron.Witter (generated)" id="1452878513190-20">
+        <createIndex catalogName="test" indexName="Person_UID" schemaName="test" tableName="event">
+            <column name="Person_UID"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="Aaron.Witter (generated)" id="1452878513190-21">
+        <createIndex catalogName="test" indexName="Person_UID" schemaName="test" tableName="identifier">
+            <column name="Person_UID"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="Aaron.Witter (generated)" id="1452878513190-22">
+        <createIndex catalogName="test" indexName="Person_UID" schemaName="test" tableName="location">
+            <column name="Person_UID"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="Aaron.Witter (generated)" id="1452878513190-23">
+        <createIndex catalogName="test" indexName="Person_UID" schemaName="test" tableName="name_alias">
+            <column name="Person_UID"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="Aaron.Witter (generated)" id="1452878513190-24">
+        <createIndex catalogName="test" indexName="Person_UID" schemaName="test" tableName="person_nationality">
+            <column name="Person_UID"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="Aaron.Witter (generated)" id="1452878513190-25">
+        <createIndex catalogName="test" indexName="Person_UID" schemaName="test" tableName="person_status">
+            <column name="Person_UID"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="Aaron.Witter (generated)" id="1452878513190-26">
+        <createIndex catalogName="test" indexName="Related_UID" schemaName="test" tableName="duplicate_person">
+            <column name="Related_UID"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="Aaron.Witter (generated)" id="1452878513190-27">
+        <createIndex catalogName="test" indexName="Status_UID" schemaName="test" tableName="person_status">
+            <column name="Status_UID"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="Aaron.Witter (generated)" id="1452878513190-28">
+        <addForeignKeyConstraint baseColumnNames="Person_UID" baseTableCatalogName="test" baseTableName="alias_dob" baseTableSchemaName="test" constraintName="alias_dob_ibfk_1" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="Person_UID" referencedTableCatalogName="test" referencedTableName="person"/>
+    </changeSet>
+    <changeSet author="Aaron.Witter (generated)" id="1452878513190-29">
+        <addForeignKeyConstraint baseColumnNames="Person_UID" baseTableCatalogName="test" baseTableName="duplicate_person" baseTableSchemaName="test" constraintName="duplicate_person_ibfk_1" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="Person_UID" referencedTableCatalogName="test" referencedTableName="person"/>
+    </changeSet>
+    <changeSet author="Aaron.Witter (generated)" id="1452878513190-30">
+        <addForeignKeyConstraint baseColumnNames="Related_UID" baseTableCatalogName="test" baseTableName="duplicate_person" baseTableSchemaName="test" constraintName="duplicate_person_ibfk_2" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="Person_UID" referencedTableCatalogName="test" referencedTableName="person"/>
+    </changeSet>
+    <changeSet author="Aaron.Witter (generated)" id="1452878513190-31">
+        <addForeignKeyConstraint baseColumnNames="Person_UID" baseTableCatalogName="test" baseTableName="event" baseTableSchemaName="test" constraintName="event_ibfk_1" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="Person_UID" referencedTableCatalogName="test" referencedTableName="person"/>
+    </changeSet>
+    <changeSet author="Aaron.Witter (generated)" id="1452878513190-32">
+        <addForeignKeyConstraint baseColumnNames="Person_UID" baseTableCatalogName="test" baseTableName="identifier" baseTableSchemaName="test" constraintName="identifier_ibfk_1" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="Person_UID" referencedTableCatalogName="test" referencedTableName="person"/>
+    </changeSet>
+    <changeSet author="Aaron.Witter (generated)" id="1452878513190-33">
+        <addForeignKeyConstraint baseColumnNames="Person_UID" baseTableCatalogName="test" baseTableName="location" baseTableSchemaName="test" constraintName="location_ibfk_1" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="Person_UID" referencedTableCatalogName="test" referencedTableName="person"/>
+    </changeSet>
+    <changeSet author="Aaron.Witter (generated)" id="1452878513190-34">
+        <addForeignKeyConstraint baseColumnNames="Person_UID" baseTableCatalogName="test" baseTableName="name_alias" baseTableSchemaName="test" constraintName="name_alias_ibfk_1" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="Person_UID" referencedTableCatalogName="test" referencedTableName="person"/>
+    </changeSet>
+    <changeSet author="Aaron.Witter (generated)" id="1452878513190-35">
+        <addForeignKeyConstraint baseColumnNames="Person_UID" baseTableCatalogName="test" baseTableName="person_nationality" baseTableSchemaName="test" constraintName="person_nationality_ibfk_1" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="Person_UID" referencedTableCatalogName="test" referencedTableName="person"/>
+    </changeSet>
+    <changeSet author="Aaron.Witter (generated)" id="1452878513190-36">
+        <addForeignKeyConstraint baseColumnNames="Nationality_UID" baseTableCatalogName="test" baseTableName="person_nationality" baseTableSchemaName="test" constraintName="person_nationality_ibfk_2" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="Nationality_UID" referencedTableCatalogName="test" referencedTableName="nationality"/>
+    </changeSet>
+    <changeSet author="Aaron.Witter (generated)" id="1452878513190-37">
+        <addForeignKeyConstraint baseColumnNames="Person_UID" baseTableCatalogName="test" baseTableName="person_status" baseTableSchemaName="test" constraintName="person_status_ibfk_1" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="Person_UID" referencedTableCatalogName="test" referencedTableName="person"/>
+    </changeSet>
+    <changeSet author="Aaron.Witter (generated)" id="1452878513190-38">
+        <addForeignKeyConstraint baseColumnNames="Status_UID" baseTableCatalogName="test" baseTableName="person_status" baseTableSchemaName="test" constraintName="person_status_ibfk_2" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="Status_UID" referencedTableCatalogName="test" referencedTableName="statuses"/>
+    </changeSet>
+</databaseChangeLog>

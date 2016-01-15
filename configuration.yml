@@ -1,0 +1,22 @@
+server:
+  type: simple
+  applicationContextPath: /
+  adminContextPath: /admin
+  connector:
+    type: http
+    port: 8080
+
+database:
+  # the name of your JDBC driver
+  driverClass: com.mysql.jdbc.Driver
+
+ # the JDBC URL
+  url: jdbc:mysql://127.0.0.1/test?reconnect=true
+
+  # the username
+  user: SA
+
+  # the password
+  password:
+
+  validationQuery: "SELECT 1"
