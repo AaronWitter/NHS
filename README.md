@@ -1,10 +1,6 @@
 NHS QS Portal
 =====================
 
-The tool allows entities to upload xml files which match the agreed schema.
-These can be searched and downloaded as CSV, XML or JSON.
-This project is currently in [Beta](https://www.gov.uk/service-manual/phases/beta.html).
-
 ### About this application
 
 This application is written using the [Dropwizard](http://www.dropwizard.io/) Java framework.
