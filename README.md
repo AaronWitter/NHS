@@ -82,6 +82,18 @@ and type. This will start the VM where you can run the server.
 vagrant up
 ```
 
+To migrate the database type the following command
+
+```bash
+vagrant ssh -c "cd /vagrant && java -jar target/webportal-1.0-SNAPSHOT.jar db migrate configuration.yml"
+```
+
+To import the data type
+
+```bash
+vagrant ssh -c "cd /vagrant && ./bootstrap.sh"
+```
+
 To run the server type the following command
 
 ```bash
